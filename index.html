@@ -9,10 +9,23 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="bg-[url('./assets/ceu.jpg')]">
-    <main>
+<body class="bg-[url('./assets/ceu.jpg')] bg-cover flex justify-center items-center h-screen">
+    <main class="bg-blue-950/70 p-10 rounded-2xl">
+        <h1 class="text-white text-3xl font-semibold">Pesquisa de Clima</h1>
+
+        <section id="resultado"></section>
+        <form class="flex flex-col items-end" onsubmit="fetchWeather(event)">
+            <input id="cidade" name="cidade"
+                class="focus:outline-blue-400 focus:outline-2 w-full rounded-md p-1.5 my-5 bg-gray-700 placeholder:text-gray-400 text-white"
+                type="text" aria-label="Cidade" placeholder="Digite uma cidade">
+            <button class="bg-blue-700 px-4 py-1.5 rounded-md text-white cursor-pointer hover:bg-blue-800"
+                type="submit">Pesquisar</button>
+        </form>
+        </section>
         
     </main>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
