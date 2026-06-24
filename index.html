@@ -1,31 +1,51 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pesquisa de CLima</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body class="bg-[url('./assets/ceu.jpg')] bg-cover flex justify-center items-center h-screen">
-    <main class="bg-blue-950/70 p-10 rounded-2xl">
-        <h1 class="text-white text-3xl font-semibold">Pesquisa de Clima</h1>
+  <body
+    class="flex min-h-screen items-center justify-center overflow-y-auto px-4 py-8"
+  >
+    <main
+      class="max-h-[calc(100vh-4rem)] w-full max-w-[440px] overflow-y-auto rounded-3xl border border-white/35 bg-white/6 p-8 shadow-[0_24px_60px_rgba(1,22,39,0.38)] backdrop-blur-xl sm:p-10"
+    >
+      <h1
+        class="text-3xl font-extrabold tracking-tight text-white sm:text-[2rem]"
+      >
+        Pesquisa de Clima
+      </h1>
 
-        <section id="resultado"></section>
-        <form class="flex flex-col items-end" onsubmit="fetchWeather(event)">
-            <input id="cidade" name="cidade"
-                class="focus:outline-blue-400 focus:outline-2 w-full rounded-md p-1.5 my-5 bg-gray-700 placeholder:text-gray-400 text-white"
-                type="text" aria-label="Cidade" placeholder="Digite uma cidade">
-            <button class="bg-blue-700 px-4 py-1.5 rounded-md text-white cursor-pointer hover:bg-blue-800"
-                type="submit">Pesquisar</button>
+      <section id="resultado" class="mt-5">
+        <form class="mt-6 flex flex-col gap-4" onsubmit="fetchWeather(event)">
+          <input
+            id="cidade"
+            name="cidade"
+            class="w-full rounded-md border border-white/40 bg-slate-950/45 px-4 py-3 text-base font-medium text-white placeholder:text-slate-300/80 shadow-inner shadow-slate-950/30 transition duration-200 focus:border-cyan-200 focus:outline-none focus:ring-3 focus:ring-cyan-200/35"
+            type="text"
+            aria-label="Cidade"
+            placeholder="Digite uma cidade"
+          />
+          <button
+            class="cursor-pointer rounded-md bg-linear-to-r from-cyan-400 via-sky-400 to-blue-500 px-5 py-3 text-sm font-extrabold tracking-wide text-slate-900 transition duration-200 hover:scale-[1.02] hover:brightness-105"
+            type="submit"
+          >
+            Pesquisar
+          </button>
         </form>
-        </section>
-        
+      </section>
     </main>
 
     <script src="index.js"></script>
-</body>
-
+  </body>
 </html>

@@ -1,8 +1,8 @@
 const resultado = document.getElementById("resultado");
 
 function retornarPadrao() {
-    window.location.href = "index.html"
-} 
+  window.location.href = "index.html";
+}
 
 function fetchWeather(event) {
   event.preventDefault();
@@ -12,13 +12,13 @@ function fetchWeather(event) {
 
   const APPID = "ddc8416700b6f82c3fcff83b6b007088";
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${APPID}&units=metric&lang=pt_br`
+    `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=${APPID}&units=metric&lang=pt_br`,
   )
     .then((res) => res.json())
     .then((data) => {
-  resultado.innerHTML = `
+      resultado.innerHTML = `
 
-        <button class="text-center text-white content-center cursor-pointer" onclick="retornarPadrao()">Pesquisar outra cidade</button>
+        <button class="text-center text-white bg-white/12 p-2 content-center cursor-pointer rounded-md font-semibold" onclick="retornarPadrao()">Pesquisar outra cidade</button>
         
         <hr class="mt-5 text-white">
 
@@ -47,8 +47,8 @@ function fetchWeather(event) {
             <div class="rounded-xl bg-gray-300 p-3 mb-3 flex flex-col items-center">
                 <span>Sensação Térmica</span>
                 <span>${data.main.feels_like}ºC</span>
-            </div>`
+            </div>`;
 
-            console.log(data)
-})}
-
+      console.log(data);
+    });
+}

@@ -1,1 +1,37 @@
 @import "tailwindcss"
+
+:root {
+	color-scheme: dark;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: "Manrope", sans-serif;
+	position: relative;
+	overflow-x: hidden;
+	isolation: isolate;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background: url("./assets/ceu.jpg") center/cover no-repeat;
+	filter: blur(4px);
+	transform: scale(1.06);
+	z-index: -2;
+}
+
+body::after {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background:
+		radial-gradient(1200px circle at 12% 20%, rgba(58, 202, 255, 0.22), transparent 45%),
+		linear-gradient(160deg, rgba(8, 28, 48, 0.4), rgba(11, 44, 71, 0.65));
+	z-index: -1;
+}
